@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
 import LoginPage from "./pages/LoginPage";
 import ProtectedPage from "./pages/ProtectedPage";
@@ -17,7 +18,7 @@ function App() {
             display: "flex",
             flexDirection: "column",
             margin: "0 auto",
-            maxWidth: "50rem"
+            maxWidth: "50rem",
           }}
         >
           <Navbar />
@@ -40,6 +41,7 @@ function App() {
             </PrivateRoute>
           </Switch>
         </div>
+        <Footer />
       </Router>
     </ProvideAuth>
   );
