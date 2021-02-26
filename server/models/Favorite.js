@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 module.exports = function(sequelize, DataTypes) {
     const Favorite = sequelize.define("Favorite", {
       title: {
