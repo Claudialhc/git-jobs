@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const bookSchema = new Schema({
+const FavoriteSchema = new Schema({
   title: { type: String, required: true },
   type: { type: String, required: true },
   url: { type: String, required: true },
@@ -16,7 +16,7 @@ const bookSchema = new Schema({
   id: { type: Integer, required: true }
 });
 
-const Book = mongoose.model("Book", bookSchema);
+const Favorite = mongoose.model("Favorite", FavoriteSchema);
 
-module.exports = Book;
-console.log(Book)
+module.exports = Favorite;
+console.log(Favorite)
