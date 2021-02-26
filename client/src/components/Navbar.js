@@ -19,6 +19,7 @@ function Navbar() {
     auth.logout();
   };
   return (
+    
     <ul style={styles.ul}>
       <li style={styles.li}>
         <Link to="/public">Public Page</Link>
