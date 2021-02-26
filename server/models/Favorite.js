@@ -1,53 +1,22 @@
-module.exports = function(sequelize, DataTypes) {
-    const Favorite = sequelize.define("Favorite", {
-      title: {
-      type: DataTypes.STRING,
-      allowNull: false
-  
-      },
-      location: {
-        type: DataTypes.STRING,
-         allowNull: false
-      },
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      companyUrl: {
-        type: DataTypes.STRING,
-         allowNull: false
-      },
-      logo: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      apply: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      created: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-      company: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-     
-      description: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      url: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      type: {
-        type: DataTypes.STRING,
-        allowNull: false
-      }
-    });
- 
-    return Favorite;
-  };
+const bookSchema = new Schema({
+  title: { type: String, required: true },
+  type: { type: String, required: true },
+  url: { type: String, required: true },
+  created: { type: String, required: true },
+  company: { type: String, required: true },
+  companyUrl: { type: String, required: true },
+  location: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  apply: { type: String, required: true },
+  logo: { type: String, required: true },
+  id: { type: Integer, required: true }
+});
+
+const Book = mongoose.model("Book", bookSchema);
+
+module.exports = Book;
+console.log(Book)
