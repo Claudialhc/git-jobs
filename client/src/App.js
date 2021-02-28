@@ -33,12 +33,15 @@ function App() {
             <Route path="/signup">
               <SignUpPage />
             </Route>
+            <Route path="/profile">
+              <UserProfilePage />
+            </Route>
             <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute>
-            <PrivateRoute path="/profile">
+            {/* <PrivateRoute path="/profile">
               <UserProfilePage />
-            </PrivateRoute>
+            </PrivateRoute> */}
           </Switch>
         </div>
         <Footer />
