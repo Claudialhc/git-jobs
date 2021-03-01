@@ -33,4 +33,30 @@ apiRouter.get("/api/user", isAuthenticated, (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
+apiRouter.delete("/api/user", isAuthenticated, (req, res) => {
+  db.User.deletebyId(req.user.favorites.id)
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: "No user found" });
+      }
+    })
+    .catch((err) => res.status(400).send(err));
+});
+
+apiRouter.post("/api/user", isAuthenticated, (req, res) => {
+  db.User.create(req.user.favorites)
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: "No user found" });
+      }
+    })
+    .catch((err) => res.status(400).send(err));
+});
+
+// add a route to delete one preference
+// add a route to add one preference to the specific, loginned user m(req.user.id)
 module.exports = apiRouter;
