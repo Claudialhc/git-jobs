@@ -27,6 +27,9 @@ function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/home">
+            Home
+          </Nav.Link>
           <Nav.Link as={Link} to="/signup">
             Sign Up
           </Nav.Link>
@@ -42,31 +45,6 @@ function Header() {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
-    // <Navbar bg="light" expand="lg">
-    // <ul style={styles.ul}>
-    //   <li style={styles.li}>
-    //     <Link to="/public">Public Page</Link>
-    //   </li>
-    //   <li style={styles.li}>
-    //     <Link to="/protected">Protected Page</Link>
-    //   </li>
-    //   {auth.isLoggedIn && (
-    //     <li style={styles.li}>
-    //       <Link to="/profile">Profile Page</Link>
-    //     </li>
-    //   )}
-    //   <li style={styles.li}>
-    //     {auth.isLoggedIn ? (
-    //       <button type="button" onClick={signOut}>
-    //         Sign Out
-    //       </button>
-    //     ) : (
-    //       <Link to="/login">Login</Link>
-    //     )}
-    //   </li>
-    // </ul>
-    //  </Navbar>
   );
 }
 

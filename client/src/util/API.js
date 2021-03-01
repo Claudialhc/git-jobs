@@ -1,9 +1,9 @@
 import axios from "axios";
-const API = "https://jobs.github.com/positions.json?description=remote";
+const URL = "https://jobs.github.com/positions.json?description=remote";
 
-export default {
-  publicPage: function () {
-    return axios.get(API);
+const API = {
+  getJobs: function () {
+    return axios.get(URL);
   }
 };
 // {
@@ -21,4 +21,4 @@ export default {
 //   }
 // };
 
-// export default API;
+export default API;

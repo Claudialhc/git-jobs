@@ -2,7 +2,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
+import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
 import ProtectedPage from "./pages/ProtectedPage";
 import PublicPage from "./pages/PublicPage";
 import SignUpPage from "./pages/SignUpPage";
@@ -24,6 +26,9 @@ function App() {
           <Navbar />
 
           <Switch>
+          <Route path="/home">
+              <HomePage />
+            </Route>
             <Route path="/public">
               <PublicPage />
             </Route>
@@ -39,9 +44,9 @@ function App() {
             <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute>
-            {/* <PrivateRoute path="/profile">
-              <UserProfilePage />
-            </PrivateRoute> */}
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
           </Switch>
         </div>
         <Footer />
