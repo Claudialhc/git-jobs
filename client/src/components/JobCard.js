@@ -1,26 +1,27 @@
-import React from "react";
-import Card from 'react-bootstrap/Card'
+import React, { Component } from "react";
+import axios from "axios";
+import API from "../util/API";
+import JobDetail from "./JobDetail";
 
-function JobCard() {
+import { Card } from "react-bootstrap";
 
-    return (
-        <Card>
-            <Card.Body>
-
-                <h2>Job Name</h2>
-                <ul>
-                    <li>Type (full-time/part-time)</li>
-                    <li>Loacation</li>
-                    <li>Created at</li>
-                    <li>Decription</li>
-                    <li>How to Apply</li>
-                    <li>URL</li>
-                </ul>
-
-            </Card.Body>
-        </Card>
-
-    );
+function JobCard({job}) {
+    console.log(job)
+  return (
+    <Card>
+      <Card.Body>
+        <h2>{job.title}</h2>
+        <ul>
+          <li>Type: {job.type}</li>
+          <li>Location: {job.location}</li>
+          <li>Company: {job.company}</li>
+          <li>Decription: {job.description}</li>
+          <li>How to Apply: {job.how_to_apply}</li>
+          <li>Company Website: {job.company_url}</li>
+        </ul>
+      </Card.Body>
+    </Card>
+  );
 }
 
 export default JobCard;
