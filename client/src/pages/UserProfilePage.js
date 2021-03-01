@@ -1,28 +1,26 @@
-import { useAuth } from "../util/authContext";
-import API from "../util/API";
-import { useEffect, useState } from "react";
+import React from "react";
+import JobCard from "../components/JobCard";
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
 
-// This component provides an example of requesting additional user info that
-// isn't available from the auth token. This page should only be rendered from
-// within a ProtectedRoute
-function UserProfilePage() {
-  const auth = useAuth();
-  const [user, setUser] = useState(null);
+function PublicPage() {
 
-  useEffect(() => {
-    API.getUser().then((res) => {
-      setUser(res.data);
-    });
-  }, [auth.isLoggedIn, auth.user.id]);
+return (
+<div>
 
-  return (
-    <div>
-      <h1>User Profile Example Page</h1>
-      <p>Id: {user?._id}</p>
-      <p>Username: {user?.username}</p>
-      <p>Email: {user?.email}</p>
-    </div>
-  );
+<Jumbotron fluid>
+  <Container>
+    <h1>(username)</h1>
+  </Container>
+</Jumbotron>
+
+<h3>Your saved Jobs:</h3>
+
+<JobCard />
+
+</div>
+
+)
 }
 
-export default UserProfilePage;
+export default PublicPage;

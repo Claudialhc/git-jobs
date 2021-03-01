@@ -34,15 +34,15 @@ function App() {
             <Route path="/signup">
               <SignUpPage />
             </Route>
+            <Route path="/profile">
+              <UserProfilePage />
+            </Route>
             <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute>
             <Route path="/landing">
               <LandingPage />
             </Route>
-            <PrivateRoute path="/profile">
-              <UserProfilePage />
-            </PrivateRoute>
           </Switch>
         </div>
         <Footer />
