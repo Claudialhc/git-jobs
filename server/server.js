@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const apiRouter = require("./routes/api");
+const jobsRouter = require("./routes/jobs");
 
 const PORT = process.env.PORT || 3001;
 
@@ -33,6 +34,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(apiRouter);
+
+app.use(jobsRouter);
+
 
 // Error handling
 app.use(function (err, req, res, next) {

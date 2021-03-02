@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import JobCard from "../components/JobCard";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
-
+import getJob from "../components/JobDetail";
 const jobs = [
 {
   "id": "421871bb-05d3-4fbe-b00c-3f372fa35584",
@@ -17,26 +17,31 @@ const jobs = [
   "how_to_apply": "<p><strong>Apply here only:</strong> <a href=\"https://www.stickermule.com/career/7e6bb5ee-9953-4d46-b008-77a3bbc4ee29\">https://www.stickermule.com/career/7e6bb5ee-9953-4d46-b008-77a3bbc4ee29</a></p>\n",
   "company_logo": "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb3VIIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--04344d944b21465d33ecd7bd62098692640a8658/herman%206.jpg"
   }]
-
 function HomePage() {
-
+const [job, setJob] = useState([]);
+useEffect (() => {
+  let mounted = true;
+  getJob()
+  .then(items => {
+    console.log(items)
+    if(mounted) {
+      setJob(items)
+    }
+  })
+  return () => mounted = false;
+}, [])
 return (
 <div>
-
 <Jumbotron fluid>
   <Container>
     <h1>Welcome to GitJobs</h1>
   </Container>
 </Jumbotron>
-
 <h3>Available Jobs:</h3>
-
-{jobs.map( job => {
+{job.map( job => {
   return <JobCard job={job} />
 })}
 </div>
-
 )
 }
-
 export default HomePage;
