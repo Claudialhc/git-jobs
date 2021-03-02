@@ -6,7 +6,7 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server",
-    "start:dev": "concurrently -c magenta,blue \"npm:server\" \"npm:client\"",
+    "start:dev": "concurrently --kill-others-on-fail -c magenta,blue \"npm:server\" \"npm:client\"",
     "server": "cd server && npm run dev",
     "client": "cd client && npm run start",
     "postinstall": "(cd client && npm install); (cd server && npm install);",
