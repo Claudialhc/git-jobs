@@ -1,5 +1,5 @@
 import React from "react";
-import JobCard from "../components/JobCard";
+
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 
@@ -16,7 +16,7 @@ return (
 
 <h3>Available Jobs:</h3>
 
-<JobCard />
+
 
 </div>
 
