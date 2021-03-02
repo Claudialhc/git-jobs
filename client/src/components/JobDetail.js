@@ -1,19 +1,24 @@
-import React from "react";
-// import axios from "axios";
+// export default function getJob() {
+//   return fetch(
+//     "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=remote",
+//     {
+//       // method: "GET",
+//       // mode: "cors",
+//       headers: {
+//         "User-Agent": "request",
+//       },
+//     }
+//   ).then((data) => data.json());
+// }
 
-
-function JobDetail(props) {
-  return (
-    <div className="text-center">
-      
-      <h3>{props.title}</h3>
-      <h3> {props.type}</h3>
-      <h3>{props.location}</h3>
-      <h3>{props.company}</h3>
-      <h3> {props.description}</h3>
-      <h3> {props.company_url}</h3>
-      
-    </div>
+import axios from "axios";
+export default function getJob() {
+  return axios.get(
+    "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=remote",
+    {
+      headers: {
+        "User-Agent": "request",
+      },
+    }
   );
 }
-export default JobDetail;
