@@ -35,17 +35,17 @@ apiRouter.get("/api/user", isAuthenticated, (req, res) => {
 
 // A route to delete one preference
 apiRouter.delete(
-  "/api/user-favorites/:favoriteId",
-  isAuthenticated,
-  (req, res) => {
-    const { favoriteId } = req.params;
-    db.User.findById(req.user.id).then((user) => {
-      user.favorites = user.favorites.filter((favorite) => {
-        favorite;
-      });
-    });
-    db.User.favorites
-      .deleteOne(req.user.id.favorites.id)
+  // System.findOne({ 'nodes.main.Alpha': 23000}, function(err, system){
+  //   if(err){console.log(err);}
+  //   else{console.log(system);}
+  // });
+  "/api/user-favorites/:favoriteId", isAuthenticated, (req, res) => {
+     const { favoriteId } = req.params;
+    db.User.findById(req.user.id)
+      .then((user) => {
+        user.favorites.id(favoriteId).remove();
+        return user.save()
+      })
       .then((data) => {
         if (data) {
           res.json(data);
@@ -61,15 +61,16 @@ apiRouter.delete(
 apiRouter.post("/api/user-favorites", isAuthenticated, (req, res) => {
   db.User.findById(req.user.id)
     .then((user) => {
-       user.favorites.push(req.body)
-       return user.save()
+      user.favorites.push(req.body);
+      return user.save();
       // if (data) {
       //   res.json(data);
       // } else {
       //   res.status(404).send({ success: false, message: "Not favorited" });
       // }
-    }).then((data)=>{
-      res.json(data)
+    })
+    .then((data) => {
+      res.json(data);
     })
     .catch((err) => {
       console.log(err);
@@ -81,7 +82,3 @@ module.exports = apiRouter;
 
 // db.User.findOneAndDelete({ "favorites.id": req.user.id.favorites.id})
 
-// System.findOne({ 'nodes.main.Alpha': 23000}, function(err, system){
-//   if(err){console.log(err);}
-//   else{console.log(system);}
-// });
