@@ -6,15 +6,16 @@ const FavoriteSchema = new Schema({
   title: { type: String, required: true },
   type: { type: String, required: true },
   url: { type: String, required: true },
-  created: { type: String, required: true },
+  created_at: { type: String, required: true },
   company: { type: String, required: true },
-  companyUrl: { type: String, required: true },
+  company_url: { type: String, required: true },
   location: { type: String, required: true },
   title: { type: String, required: true },
   description: { type: String, required: true },
-  apply: { type: String, required: true },
-  logo: { type: String, required: true },
-  id: { type: Number, required: true }
+  how_to_apply: { type: String, required: true },
+  company_logo: { type: String, required: true },
+  // This is an id from the gitHub jobs API.
+  gitHubJobsId: { type: String, required: true }
 });
 
 const UserSchema = new Schema({
@@ -52,6 +53,25 @@ const UserSchema = new Schema({
     }
   ]
 });
+{
+  user: "tanman"
+  email: "yolo.com"
+  pasword: "yelp"
+  favorites: [{type: {
+    title: "any-string",
+    type: "any-string",
+    url: "any-string",
+    created: "any-string",
+    company: "any-string",
+    companyUrl: "any-string",
+    location: "any-string",
+    title: "any-string",
+    description: "any-string",
+    apply: "any-string",
+    logo: "any-string",
+    id: 7878 
+  }}]
+}
 
 // Execute before each user.save() call
 UserSchema.pre("save", function (callback) {
@@ -80,5 +100,5 @@ UserSchema.methods.verifyPassword = function (password, cb) {
 };
 
 const User = mongoose.model("User", UserSchema);
-
+// const Favorite = mongoose.model("Favorite", FavoriteSchema);
 module.exports = User;
