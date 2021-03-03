@@ -8,9 +8,9 @@ function PublicPage() {
 return (
 <div>
 
-<Jumbotron fluid>
+<Jumbotron fluid className="bg-info text-white">
   <Container>
-    <h1>Welcome (username)</h1>
+    <h1 className="text-center">Welcome to GitJobs!</h1>
   </Container>
 </Jumbotron>
 
