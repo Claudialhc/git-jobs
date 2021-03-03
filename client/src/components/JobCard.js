@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
-import API from "../util/API";
-import JobDetail from "./JobDetail";
-
 import { Card } from "react-bootstrap";
 
 function JobCard({job}) {
