@@ -11,9 +11,11 @@ function JobCard({job}) {
           <li><strong>Type:</strong> {job.type}</li>
           <li><strong>Location:</strong> {job.location}</li>
           <li><strong>Company:</strong> {job.company}</li>
-          {/* <li>Decription: {job.description}</li> */}
           <li><strong>How to Apply:</strong> {job.how_to_apply}</li>
           <li><strong>Company Website:</strong> {job.company_url}</li>
+          <br />
+          <button type="button" href="profile" class="btn btn-info">Save</button> {""}
+          <button type="button" class="btn btn-info">Delete</button>
         </ul>
       </Card.Body>
     </Card>
