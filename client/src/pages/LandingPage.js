@@ -22,10 +22,7 @@ function LandingPage() {
             their homes.{" "}
           </h3>
           <br />
-          <button type="button" href="signup" class="btn btn-info">Sign Up</button> 
-          {/* <Button variant="flat" size="xxl">
-            Sign Up
-          </Button> */}
+          <button type="button" href="signup" className="btn btn-info">Sign Up</button> 
         </Card.Body>
       </Card>
     </div>
