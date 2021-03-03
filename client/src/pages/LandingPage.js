@@ -21,9 +21,11 @@ function LandingPage() {
             find their dream remote job without having to leave the comfort of
             their homes.{" "}
           </h3>
-          <Button variant="flat" size="xxl">
+          <br />
+          <button type="button" href="signup" class="btn btn-info">Sign Up</button> 
+          {/* <Button variant="flat" size="xxl">
             Sign Up
-          </Button>
+          </Button> */}
         </Card.Body>
       </Card>
     </div>
