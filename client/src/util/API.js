@@ -1,9 +1,8 @@
 import axios from "axios";
-const URL = "https://jobs.github.com/positions.json?description=remote";
 
 const API = {
   getJobs: function () {
-    return axios.get(URL);
+    return axios.get("/api/job-listings");
   }
 };
 // {
