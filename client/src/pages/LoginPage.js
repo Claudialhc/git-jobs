@@ -25,10 +25,10 @@ function LoginPage() {
   }
 
   return (
-    <div>
+    <div className="text-center text-white p-5">
       <h1>Login</h1>
       <form onSubmit={login}>
-        <label htmlFor="email">Email:</label>
+        <div className="pt-3 pb-2" htmlFor="email">Email:</div>
         <input
           type="email"
           name="email"
@@ -38,7 +38,7 @@ function LoginPage() {
           required
         />
         <br />
-        <label htmlFor="password">Password:</label>
+        <div className="pt-3 pb-2" htmlFor="password">Password:</div>
         <input
           type="password"
           name="password"
@@ -46,14 +46,17 @@ function LoginPage() {
           value={formState.password}
           onChange={handleInputChange}
           required
+          className="input-group-lg"
         />
         <br />
-        <button type="submit" onClick={login}>
+        <div className="pt-4 pb-4">
+        <button className="btn btn-success text-white" type="submit" onClick={login}>
           Log in
         </button>
+        </div>
       </form>
-      <p>
-        Don't have an account yet? <Link to="/signup">Sign Up</Link>
+      <p className="text-dark">
+        Don't have an account yet? <Link className="text-white" to="/signup">Sign up here!</Link>
       </p>
     </div>
   );

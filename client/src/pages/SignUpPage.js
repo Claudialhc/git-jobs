@@ -34,10 +34,10 @@ function SignUpPage() {
   }
 
   return (
-    <div>
+    <div className="text-center text-white p-5">
       <h1>Sign Up</h1>
       <form onSubmit={handleSignUpFormSubmit}>
-        <label htmlFor="username">Username:</label>
+        <div className="pt-3 pb-2 text-white" htmlFor="username">Username:</div>
         <input
           type="text"
           name="username"
@@ -47,7 +47,7 @@ function SignUpPage() {
           required
         />
         <br />
-        <label htmlFor="email">Email:</label>
+        <div className="pt-3 pb-2 text-white" htmlFor="email">Email:</div>
         <input
           type="email"
           name="email"
@@ -57,7 +57,7 @@ function SignUpPage() {
           required
         />
         <br />
-        <label htmlFor="password">Password:</label>
+        <div className="pt-3 pb-2 text-white" htmlFor="password">Password:</div>
         <input
           type="password"
           name="password"
@@ -67,7 +67,9 @@ function SignUpPage() {
           required
         />
         <br />
-        <button type="submit">Submit</button>
+        <div className="pt-4">
+        <button type="submit" className="btn btn-success text-white">Submit</button>
+        </div>
       </form>
     </div>
   );
