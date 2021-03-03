@@ -36,9 +36,6 @@ function Header() {
           <Nav.Link as={Link} to="/login">
             Log In
           </Nav.Link>
-          <Nav.Link as={Link} to="/login">
-            Log In
-          </Nav.Link>
           {/* <Nav.Link as={Link} to="/public">
             Job Search
           </Nav.Link> */}
