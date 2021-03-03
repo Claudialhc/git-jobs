@@ -44,7 +44,7 @@ function App() {
             <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute>
-            <Route exact path="/">
+            <Route exact path="*">
               <LandingPage />
             </Route>
           </Switch>
