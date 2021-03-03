@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useAuth } from "../util/authContext";
-import API from "../util/API";
+import signUp from "../util/SignUp";
 
 function SignUpPage() {
   const [formState, setFormState] = useState({
@@ -19,7 +19,7 @@ function SignUpPage() {
 
   const handleSignUpFormSubmit = (event) => {
     event.preventDefault();
-    API.signUpUser(formState)
+    signUp.signUpUser(formState)
       .then(() => {
         auth.login({ email: formState.email, password: formState.password });
       })
@@ -68,7 +68,7 @@ function SignUpPage() {
         />
         <br />
         <div className="pt-4">
-        <button type="submit" className="btn btn-success text-white">Submit</button>
+        <button type="submit" className="btn btn-success text-white" onClick={handleInputChange}>Submit</button>
         </div>
       </form>
     </div>
