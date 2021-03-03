@@ -29,8 +29,8 @@ function HomePage() {
         </Container>
       </Jumbotron>
       <h3>Available Jobs:</h3>
-      {jobs.map((job, i) => {
-        return <JobCard key={i} job={job} />;
+      {jobs.map((job) => {
+        return <JobCard key={job.id} job={job} />;
       })}
     </div>
   );
