@@ -3,6 +3,9 @@ import { Card } from "react-bootstrap";
 
 function JobCard({job}) {
     console.log(job)
+    const handleDeleteClick = ()=>{
+    console.log("Delete is clicked")
+    }
   return (
     <Card>
       <Card.Body>
@@ -14,12 +17,14 @@ function JobCard({job}) {
           <li><strong>How to Apply:</strong> {job.how_to_apply}</li>
           <li><strong>Company Website:</strong> {job.company_url}</li>
           <br />
-          <button type="button" href="profile" class="btn btn-info">Save</button> {""}
-          <button type="button" class="btn btn-info">Delete</button>
+          <button type="button" href="profile" className="btn btn-info">Save</button> {""}
+          <button type="button" onClick={handleDeleteClick} className="btn btn-info">Delete</button>
         </ul>
       </Card.Body>
     </Card>
   );
 }
+
+
 
 export default JobCard;
