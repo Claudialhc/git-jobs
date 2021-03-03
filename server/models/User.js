@@ -53,25 +53,6 @@ const UserSchema = new Schema({
     }
   ]
 });
-{
-  user: "tanman"
-  email: "yolo.com"
-  pasword: "yelp"
-  favorites: [{type: {
-    title: "any-string",
-    type: "any-string",
-    url: "any-string",
-    created: "any-string",
-    company: "any-string",
-    companyUrl: "any-string",
-    location: "any-string",
-    title: "any-string",
-    description: "any-string",
-    apply: "any-string",
-    logo: "any-string",
-    id: 7878 
-  }}]
-}
 
 // Execute before each user.save() call
 UserSchema.pre("save", function (callback) {

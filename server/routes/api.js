@@ -20,7 +20,6 @@ apiRouter.post("/api/signup", (req, res) => {
 });
 
 // Any route with isAuthenticated is protected and you need a valid token
-// to access
 apiRouter.get("/api/user", isAuthenticated, (req, res) => {
   db.User.findById(req.user.id)
     .then((data) => {
@@ -33,19 +32,16 @@ apiRouter.get("/api/user", isAuthenticated, (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
-// A route to delete one preference
+
 apiRouter.delete(
-  "/api/user-favorites/:favoriteId",
-  isAuthenticated,
-  (req, res) => {
-    const { favoriteId } = req.params;
-    db.User.findById(req.user.id).then((user) => {
-      user.favorites = user.favorites.filter((favorite) => {
-        favorite;
-      });
-    });
-    db.User.favorites
-      .deleteOne(req.user.id.favorites.id)
+  
+  "/api/user-favorites/:favoriteId", isAuthenticated, (req, res) => {
+     const { favoriteId } = req.params;
+    db.User.findById(req.user.id)
+      .then((user) => {
+        user.favorites.id(favoriteId).remove();
+        return user.save()
+      })
       .then((data) => {
         if (data) {
           res.json(data);
@@ -57,19 +53,15 @@ apiRouter.delete(
   }
 );
 
-// add a route to add one preference to the specific, loginned user m(req.user.id)
+
 apiRouter.post("/api/user-favorites", isAuthenticated, (req, res) => {
   db.User.findById(req.user.id)
     .then((user) => {
-       user.favorites.push(req.body)
-       return user.save()
-      // if (data) {
-      //   res.json(data);
-      // } else {
-      //   res.status(404).send({ success: false, message: "Not favorited" });
-      // }
-    }).then((data)=>{
-      res.json(data)
+      user.favorites.push(req.body);
+      return user.save();
+    })
+    .then((data) => {
+      res.json(data);
     })
     .catch((err) => {
       console.log(err);
@@ -79,9 +71,5 @@ apiRouter.post("/api/user-favorites", isAuthenticated, (req, res) => {
 
 module.exports = apiRouter;
 
-// db.User.findOneAndDelete({ "favorites.id": req.user.id.favorites.id})
 
-// System.findOne({ 'nodes.main.Alpha': 23000}, function(err, system){
-//   if(err){console.log(err);}
-//   else{console.log(system);}
-// });
+
