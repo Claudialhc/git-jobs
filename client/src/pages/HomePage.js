@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import API from "../util/API.js";
 
 function HomePage() {
+
   const [jobs, setJobs] = useState([]);
   useEffect(() => {
     let mounted = true;
@@ -17,6 +18,9 @@ function HomePage() {
     });
     return () => (mounted = false);
   }, []);
+
+  
+
   return (
     <div>
       <Jumbotron fluid className="bg-info text-white">
