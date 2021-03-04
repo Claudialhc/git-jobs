@@ -21,7 +21,7 @@ function LoginPage() {
 
   if (auth.isLoggedIn) {
     // redirect to /protected if user is logged in
-    return <Redirect to="/protected" />;
+    return <Redirect to="/home" />;
   }
 
   return (

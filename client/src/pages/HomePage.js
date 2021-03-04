@@ -5,21 +5,12 @@ import Container from "react-bootstrap/Container";
 import API from "../util/API.js";
 
 function HomePage() {
-
   const [jobs, setJobs] = useState([]);
   useEffect(() => {
-    let mounted = true;
     API.getJobs().then((response) => {
-      console.log(response);
-      console.log(response.data);
-      if (mounted) {
-        setJobs(response.data);
-      }
+      setJobs(response.data);
     });
-    return () => (mounted = false);
   }, []);
-
-  
 
   return (
     <div>
@@ -29,8 +20,8 @@ function HomePage() {
         </Container>
       </Jumbotron>
       <h3>Available Jobs:</h3>
-      {jobs.map((job, i) => {
-        return <JobCard key={i} job={job} />;
+      {jobs.map((job) => {
+        return <JobCard key={job.id} job={job} />;
       })}
     </div>
   );
