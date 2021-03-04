@@ -50,7 +50,7 @@ function JobCard({job}) {
   
   return (
     <Card>
-      <Card.Body>
+      <Card.Body> 
         <h2 className="text-center">{job.title}</h2>
         <ul>
           <li><strong>Type:</strong> {job.type}</li>
