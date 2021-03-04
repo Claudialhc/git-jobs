@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import App from "./App";
-
+import { initAxiosAuth } from "./util/authContext";
 import reportWebVitals from "./reportWebVitals";
-
+initAxiosAuth();
 ReactDOM.render(
   <React.StrictMode>
     <App />

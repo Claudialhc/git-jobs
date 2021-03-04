@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { Card } from "react-bootstrap";
 import API from "../util/API"
 
-function JobCard({job}) {
+function FavoriteJobCard({job}) {
 
   const [isSaved, setIsSaved] = useState(false);
     /* 
@@ -70,4 +70,4 @@ function JobCard({job}) {
 
 
 
-export default JobCard;
+export default FavoriteJobCard;

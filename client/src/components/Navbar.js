@@ -42,7 +42,7 @@ function Header() {
           {/* <Nav.Link as={Link} to="/public">
             Job Search
           </Nav.Link> */}
-          <Nav.Link as={Link} to="/profile">
+          <Nav.Link as={Link} to="/favorites">
             Favorites
           </Nav.Link>
         </Nav>

@@ -10,6 +10,9 @@ const API = {
   savejob: function (jobData) {
     return axios.post("/api/user-favorites", jobData);
   },
+  getUser: function() {
+    return axios.get("/api/user");
+  },
 };
 
 
