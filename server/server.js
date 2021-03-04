@@ -16,6 +16,7 @@ if (!process.env.SERVER_SECRET) {
   );
 }
 
+
 // Setting up express to use json and set it to req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
