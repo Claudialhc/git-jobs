@@ -16,14 +16,17 @@ if (!process.env.SERVER_SECRET) {
   );
 }
 
+
 // Setting up express to use json and set it to req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/appDB", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/git-jobs", {
     useNewUrlParser: true,
-    useCreateIndex: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   })
   .then(() => console.log("MongoDB Connected!"))
   .catch((err) => console.error(err));
