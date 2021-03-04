@@ -4,7 +4,7 @@ const API = {
   getJobs: function () {
     return axios.get("/api/job-listings");
   },
-  delete: function(favoriteId) {
+  deleteFavorite: function(favoriteId) {
     return axios.delete("/api/user-favorites/" + favoriteId);
   },
   savejob: function (jobData) {

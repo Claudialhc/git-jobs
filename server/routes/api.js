@@ -34,7 +34,6 @@ apiRouter.get("/api/user", isAuthenticated, (req, res) => {
 
 
 apiRouter.delete(
-  
   "/api/user-favorites/:favoriteId", isAuthenticated, (req, res) => {
      const { favoriteId } = req.params;
     db.User.findById(req.user.id)
